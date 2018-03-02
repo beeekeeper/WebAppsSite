@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 
-<link rel="stylesheet" href="/Users/AbiHunter/Sites/RecipesSite/WebAppsSite/css/desktop.css">
+<link rel="stylesheet" href=".../RecipesSite/WebAppsSite/css/desktop.css">
 
 <head>
 
@@ -12,6 +12,10 @@
 
 <body>
     <h1>This is my title</h1>
+    <?php
+    
+    ?>
+    
 </body>
 
 </html>
