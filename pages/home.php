@@ -11,10 +11,22 @@
 </head>
 
 <body>
-    <h1>This is my title</h1>
-    <?php
-    
-    ?>
+    <div id="navBar">
+        <ul>
+            <li><a href=".../pages/home.php">HOME</a></li>
+            <li><a href=".../pages/recipes.php">RECIPES</a></li>
+                <div class="dropDown">
+                    <button class="dropBtn">RECIPES</button>
+                    <div class="dropContent">
+                        <a href
+
+                    </div>
+                </div>
+            <li><a href=".../pages/about.php">ABOUT</a></li>
+            <li><a href=".../pages/contact.php">CONTACT</a></li>
+        </ul>
+
+    </div>
     
 </body>
 
