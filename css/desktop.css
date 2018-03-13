@@ -68,3 +68,10 @@ li:hover {
 .dropDown:hover .dropBtn {
     background-color: lavender;
 }
+
+.logoName {
+    font-family: 'Arial Narrow';
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}

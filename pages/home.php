@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="../css/desktop.css">
+    <!-- <link type="text/css" rel="stylesheet" href="../css/desktop.css"> -->
     <title>Bee Keeper</title> <!-- Shows up in the tab at the top -->
 
 <!-- Have the name of the page currently on in the header -->
@@ -25,6 +25,7 @@
         </div>
     </div>
 
+<!--<div class="container-fluid">
     <div id="navBar">
         <ul>
             <li><a href="#">HOME</a></li>
@@ -49,6 +50,21 @@
             <li><a href="#">CONTACT</a></li>
         </ul>
     </div>
+</div>-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      One of three columns
+    </div>
+    <div class="col-md-4">
+      One of three columns
+    </div>
+    <div class="col-md-4">
+      One of three columns
+    </div>
+  </div>
+</div>
 
 </body>
 
