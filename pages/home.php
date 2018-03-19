@@ -24,7 +24,7 @@ ul {
 li {
     display: inline-block;
     text-decoration: none;
-    min-width: 160px;
+    /*min-width: 160px;*/
     text-align: center;
     cursor: pointer;
     font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
@@ -168,6 +168,63 @@ li:hover{
     height : 2px !important;
     background-color : #f9f9f9;
 }
+
+.blankRowB {
+    height: 30px !important;
+    /* overwrites any other rules */
+    background-color : #FFFFFF;
+}
+
+.carousel-inner > .item > img {
+  width : 640px;
+  height : 440px;
+  object-fit : contain;
+}
+
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+#carousel-example-generic {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.profile .main-section .content {width: 60%}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+@media (min-width: 1200px) {
+}
+
+ol li {
+    max-width: 20px;
+}
+
+carousel-caption { right: 30%; left: 30% } 
+@media (min-width: 768px){ 
+    .carousel-caption { right: 15%; left: 15% } 
+}
+
+@media (max-width: 767px) { /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    li {
+
+    }
+}
+
 </style>
 
 
@@ -213,34 +270,34 @@ li:hover{
   <div class="row">
     <div class="col-md-2 col-md-offset-2">
         <div class="dropDown">
-            <li class="dropBtn">H O M E</li> <!-- Add <li></li> tags to these for the css -->
+            <a href="../pages/home.php"><li class="dropBtn">H O M E</li></a> <!-- Add <li></li> tags to these for the css -->
         </div>
     </div>
     <div class="col-md-2">
     <div class="dropDown">
-        <li class="dropBtn">R E C I P E S</li>
+        <a  href="../pages/recipes.php"><li class="dropBtn">R E C I P E S</li></a>
         <div class="dropContent">
-            <a href="#">V I E W  A L L</a>
-            <a href="#">B R E A K F A S T</a>
-            <a href="#">M A I N</a>
-            <a href="#">S I D E</a>
-            <a href="#">S A L A D</a>
-            <a href="#">S N A C K</a>
-            <a href="#">S W E E T</a>
-            <a href="#">D R I N K</a>
-            <a href="#">C O U N T R Y</a>
-            <a href="#">S P E C I A L - D I E T</a>
+            <a href="../subPages/viewAll.php">V I E W - A L L</a>
+            <a href="../subPages/breakfast.php">B R E A K F A S T</a>
+            <a href="../subPages/main.php">M A I N</a>
+            <a href="../subPages/side.php">S I D E</a>
+            <a href="../subPages/salad.php">S A L A D</a>
+            <a href="../subPages/snack.php">S N A C K</a>
+            <a href="../subPages/dessert.php">D E S S E R T</a>
+            <a href="../subPages/drink.php">D R I N K</a>
+            <a href="../subPages/byCountry.php">B Y - C O U N T R Y</a>
+            <a href="../subPages/specialDiets.php">S P E C I A L - D I E T</a>
         </div>
     </div>
     </div>
     <div class="col-md-2">
         <div class="dropDown">
-            <li class="dropBtn">A B O U T</li>
+            <a href="../pages/about.php"><li class="dropBtn">A B O U T</li></a>
         </div>
     </div>
     <div class="col-md-2">
         <div class="dropDown">
-            <li class="dropBtn">C O N T A C T</li>
+            <a href="../pages/contact.php"><li class="dropBtn">C O N T A C T</li></a>
         </div>
     </div>
     </div>
@@ -258,6 +315,104 @@ li:hover{
         </div>
     </div>
 </div>
+
+<!-- end of 'top container' -->
+
+<div class="container-fluid">
+    <div class="blankRowB">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    
+
+    <!-- Wrapper for slides -->
+   <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img class="img-responsive" src="../images/drinkforsliderthing.jpg" alt="drink" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img class="img-responsive" src="../images/Israeli-Couscous-Salad-7.jpg" alt="salad" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img class="img-responsive" src="../images/Pumpkin-Soup-landscape.jpg" alt="soup" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#carouselExampleIndicators" data-slide="prev" role="button">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carouselExampleIndicators" data-slide="next" role="button">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<!--
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
+  <!-- Indicators -->
+  <!--<ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>-->
+
+  <!-- Wrapper for slides -->
+  <!--<div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="../images/SetWidth800-Doherty-Keller-0016-Edit-Full.jpg" alt="../images/drinkforsliderthing">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/drinkforsliderthing.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/Israeli-Couscous-Salad-7.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="../images/Pumpkin-Soup-landscape.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>-->
+
+  <!-- Controls -->
+  <!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>-->
+
 
 </body>
 
