@@ -260,7 +260,7 @@ carousel-caption { right: 30%; left: 30% }
     <div class="container-fluid">
         <div class="siteContainerTop">
         <!-- This will include the Logo - and maybe the search bar and basket -->
-        <a class="topLogo" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/home.php">
+        <a class="topLogo" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/index.php">
         <div class="col-md-4 col-md-offset-4">
         食べましょう
         </div>
@@ -270,7 +270,7 @@ carousel-caption { right: 30%; left: 30% }
     <div class="container-fluid">
         <div class="siteContainerTop">
         <!-- This will include the Logo - and maybe the search bar and basket -->
-        <a class="topLogoUnder" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/home.php">
+        <a class="topLogoUnder" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/index.php">
         <div class="col-md-4 col-md-offset-4">
         - T A B E M A S H O U -
         </div>
@@ -289,7 +289,7 @@ carousel-caption { right: 30%; left: 30% }
   <div class="row">
     <div class="col-md-2 col-md-offset-2">
         <div class="dropDown">
-            <a href="../pages/home.php"><li class="dropBtn">H O M E</li></a> <!-- Add <li></li> tags to these for the css -->
+            <a href="../pages/index.php"><li class="dropBtn">H O M E</li></a> <!-- Add <li></li> tags to these for the css -->
         </div>
     </div>
     <div class="col-md-2">
@@ -310,38 +310,45 @@ carousel-caption { right: 30%; left: 30% }
     </div>
 </div>
 
+<div class="container-fluid">
+    <div class="blankRow2">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+
 <!-- end of 'top container' -->
 
 <div class="container-fluid">
-    <div class="row" style="background-color:#f9f9f9; height:22px;"> <!-- background of the row, sets it all to a pale grey instead of just behind the 'buttons' -->
-        <div class="col-md-1 col-md-offset-1">
+    <div class="row"> <!-- background of the row, sets it all to a pale grey instead of just behind the 'buttons' -->
+        <div class="col-md-1 col-md-offset-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">V I E W - A L L</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">B R E A K F A S T</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">M A I N</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">S I D E</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">S A L A D</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">S N A C K</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">D E S S E R T</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">D R I N K</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">B Y - C O U N T R Y</p>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">S P E C I A L-D I E T</p>
         </div>
     </div>
@@ -349,7 +356,7 @@ carousel-caption { right: 30%; left: 30% }
 
 <!-- End of top container plus mini nav bar -->
 
-
+<!-- Start of recipes page and subpages -->
 
 
 </body>
