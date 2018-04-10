@@ -216,13 +216,84 @@ p:hover{
 .profile .main-section .content {width: 60%}
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
+  position : fixed;
+  top : 0;
+  width : 100%
 }
 
 .sticky + .content {
   padding-top: 60px;
+}
+
+.flexContainer {
+    display : flex;
+    color : #fff;
+    background-color : #5995DA;  /* Blue */
+    padding : 20px 0;
+    justify-content : center;
+}
+
+.menu {
+    border: 1px solid #fff; /* for debugging*/
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login {
+  margin-left: 20px;
+}
+
+.header-container {
+  color: #5995DA;
+  background-color: #D6E9FE;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-grid {
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+  justify-content : space-around;
+  display : flex;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #D6E9FE;
+  height: 200px;
+  flex: 1;
 }
 
 @media (min-width: 1200px) {
@@ -320,8 +391,8 @@ carousel-caption { right: 30%; left: 30% }
 <!-- end of 'top container' -->
 
 <div class="container-fluid">
-    <div class="row"> <!-- background of the row, sets it all to a pale grey instead of just behind the 'buttons' -->
-        <div class="col-md-1 col-md-offset-1" style="background-color:#f9f9f9; height:22px;">
+    <div style="background-color:#f9f9f9; height:22px;"> <!-- background of the row, sets it all to a pale grey instead of just behind the 'buttons' -->
+        <div class="col-md-1 col-md-offset-1">
             <p class="dropBtn2" href="#">V I E W - A L L</p>
         </div>
         <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
@@ -356,7 +427,62 @@ carousel-caption { right: 30%; left: 30% }
 
 <!-- End of top container plus mini nav bar -->
 
-<!-- Start of recipes page and subpages -->
+<!-- Start of 'V I E W - A L L' page -->
+
+<div class="flexContainer">
+    <div class='menu'>
+        <div class='date'>Aug 14, 2016</div>
+        <div class="links">
+            <div class='signup'>Sign Up</div>
+            <div class='login'>Login</div>
+        </div>
+    </div>
+</div>
+
+
+<div class='header-container'>
+  <div class='header'>
+    <div class='subscribe'>Subscribe &#9662;</div>
+    <div class='logo'><img src='../images/awesome-logo.svg'/></div>
+    <div class='social'><img src='../images/social-icons.svg'/></div>
+  </div>
+</div>
+
+
+<div class='photo-grid-container'>
+  <div class='photo-grid'>
+    <div class='photo-grid-item first-item'>
+      <img src='../images/one.svg'/>
+    </div>
+    <div class='photo-grid-item'>
+      <img src='../images/two.svg'/>
+    </div>
+    <div class='photo-grid-item'>
+      <img src='../images/three.svg'/>
+    </div>
+    <div class='photo-grid-item'>
+        <img src='../images/four.svg'/>
+    </div>
+    <div class='photo-grid-item last-item'>
+        <img src='../images/five.svg'/>
+    </div>
+  </div>
+</div>
+
+
+<div class='footer'>
+  <div class='footer-item footer-one'></div>
+  <div class='footer-item footer-two'></div>
+  <div class='footer-item footer-three'></div>
+</div>
+
+
+
+
+
+
+
+
 
 
 </body>

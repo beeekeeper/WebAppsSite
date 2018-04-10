@@ -164,15 +164,25 @@ li:hover{
     background-color : #FFFFFF;
 }
 
-.paleLine {
-    height : 2px !important;
-    background-color : #f9f9f9;
+.blankRow3 {
+    height : 20px !important;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
 }
 
 .blankRowB {
     height: 30px !important;
     /* overwrites any other rules */
     background-color : #FFFFFF;
+}
+
+.paleLine {
+    height : 2px !important;
+    background-color : #f9f9f9;
 }
 
 .carousel-inner > .item > img {
@@ -232,10 +242,14 @@ carousel-caption { right: 30%; left: 30% }
 
 <body>
     <div class="container-fluid">
-        <div class="blankRow">
-            <div colspan="12"> <!-- Blank row -->
+    <div class="row">
+        <div class="blankRow3">
+            <!--<div colspan="12">--> <!-- Blank row -->
+            <div class="col-md-2 col-md-offset-10">
+            <a href="#">L O G I N / S I G N U P</a>
             </div>
         </div>
+    </div>
     </div>
     
     <div class="container-fluid">
