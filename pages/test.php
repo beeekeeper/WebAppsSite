@@ -16,7 +16,6 @@
 <!-- Have the name of the page currently on in the header -->
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Oswald'); /* imports the google font oswald which is used throughout the website */
 ul {
     list-style-type: none;
     /*display: flex;
@@ -243,47 +242,8 @@ carousel-caption { right: 30%; left: 30% }
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid fixed">
     <div class="row">
-        <div class="blankRow3">
-            <!--<div colspan="12">--> <!-- Blank row -->
-            <div class="col-md-2 col-md-offset-10">
-            <a href="#">L O G I N / S I G N U P</a>
-            </div>
-        </div>
-    </div>
-    </div>
-    
-    <div class="container-fluid">
-        <div class="siteContainerTop">
-        <!-- This will include the Logo - and maybe the search bar and basket -->
-        <a class="topLogo" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/home.php">
-        <div class="col-md-4 col-md-offset-4">
-        食べましょう
-        </div>
-        <a></a>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="siteContainerTop">
-        <!-- This will include the Logo - and maybe the search bar and basket -->
-        <a class="topLogoUnder" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/home.php">
-        <div class="col-md-4 col-md-offset-4">
-        - T A B E M A S H O U -
-        </div>
-        <a></a>
-        </div>
-    </div>
-
-
-<div class="container-fluid">
-    <div class="blankRow2">
-        <div colspan="12"> <!-- Blank row -->
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-  <div class="row">
     <div class="col-md-2 col-md-offset-2">
         <div class="dropDown">
             <a href="../pages/index.php"><li class="dropBtn">H O M E</li></a> <!-- Add <li></li> tags to these for the css -->
@@ -317,29 +277,19 @@ carousel-caption { right: 30%; left: 30% }
         </div>
     </div>
     </div>
-</div>
 
-<div class="container-fluid">
-    <div class="blankRow2">
-        <div colspan="12"> <!-- Blank row -->
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="paleLine">
-        <div colspan="12"> <!-- Blank row with colour to seperate the nav bar from the rest of the site body -->
-        </div>
-    </div>
-</div>
 
-<!-- end of 'top container' -->
 
-<div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
-        </div>
+    <div class="row">
+    
+            <div class="col-md-12">
+            asdfafs
+            </div>
+
     </div>
-</div>
+
+
+    </div>
 
 
 <div class="container-fluid">

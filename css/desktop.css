@@ -8,7 +8,6 @@ ul {
 li {
     display: inline-block;
     text-decoration: none;
-    min-width: 160px;
     text-align: center;
     cursor: pointer;
     font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
