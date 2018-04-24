@@ -14,6 +14,38 @@
 <!-- Have the name of the page currently on in the header -->
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Oswald'); /* imports the google font oswald which is used throughout the website */
+
+body {
+  position: relative;
+}
+
+h1 {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 18px;
+    font-weight : 800;
+    /*margin: 1em 0 0;*/
+    /*letter-spacing: 4px;*/
+    color: #222;
+    text-transform: uppercase;
+}
+
+h2 {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 18px;
+    font-weight : 500;
+    /*margin: 1em 0 0;*/
+    /*letter-spacing: 4px;*/
+    color: #222;
+    text-transform: uppercase;
+}
+
 ul {
     list-style-type: none;
     /*display: flex;
@@ -24,7 +56,6 @@ ul {
 li {
     display: inline-block;
     text-decoration: none;
-    /*min-width: 160px;*/
     text-align: center;
     cursor: pointer;
     font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
@@ -97,7 +128,7 @@ li a:hover {
 }
 
 .dropContent a:hover {
-    background-color: lavender-blush;
+    background-color: lavender;
     color : white;
 }
 
@@ -184,9 +215,14 @@ p:hover{
     background-color : #FFFFFF;
 }
 
-.paleLine {
-    height : 2px !important;
-    background-color : #f9f9f9;
+.blankRow3 {
+    height : 20px !important;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
 }
 
 .blankRowB {
@@ -195,10 +231,15 @@ p:hover{
     background-color : #FFFFFF;
 }
 
+.paleLine {
+    height : 2px !important;
+    background-color : #f9f9f9;
+}
+
 .carousel-inner > .item > img {
   width : 640px;
-  height : 440px;
-  object-fit : contain;
+  height : 420px;
+  object-fit : cover;
 }
 
 .carousel-indicators li {
@@ -211,14 +252,35 @@ p:hover{
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    height : 400px;
+}
+
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 1px;
+    background-color: #fff;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000\9;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #fff;
+    border-radius: 10px;
 }
 
 .profile .main-section .content {width: 60%}
 
 .sticky {
-  position : fixed;
-  top : 0;
-  width : 100%
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 
 .sticky + .content {
@@ -226,74 +288,74 @@ p:hover{
 }
 
 .flexContainer {
-    display : flex;
-    color : #fff;
-    background-color : #5995DA;  /* Blue */
-    padding : 20px 0;
-    justify-content : center;
+display : flex;
+color : #fff;
+background-color : #5995DA; /* Blue */
+padding : 20px 0;
+justify-content : center;
 }
 
 .menu {
-    border: 1px solid #fff; /* for debugging*/
-    width: 900px;
-    display: flex;
-    justify-content: space-between;
+border: 1px solid #fff; /* for debugging*/
+width: 900px;
+display: flex;
+justify-content: space-between;
 }
 
 .links {
-  display: flex;
-  justify-content: flex-end;
+display: flex;
+justify-content: flex-end;
 }
 
 .login {
-  margin-left: 20px;
+margin-left: 20px;
 }
 
 .header-container {
-  color: #5995DA;
-  background-color: #D6E9FE;
-  display: flex;
-  justify-content: center;
+color: #5995DA;
+background-color: #D6E9FE;
+display: flex;
+justify-content: center;
 }
 
 .header {
-  width: 900px;
-  height: 300px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+width: 900px;
+height: 300px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .photo-grid-container {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .photo-grid {
-  width: 900px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+width: 900px;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
 }
 
 .photo-grid-item {
-  border: 1px solid #fff;
-  width: 300px;
-  height: 300px;
-  justify-content : space-around;
-  display : flex;
+border: 1px solid #fff;
+width: 300px;
+height: 300px;
+justify-content : space-around;
+display : flex;
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
+display: flex;
+justify-content: space-between;
 }
 
 .footer-item {
-  border: 1px solid #fff;
-  background-color: #D6E9FE;
-  height: 200px;
-  flex: 1;
+border: 1px solid #fff;
+background-color: #D6E9FE;
+height: 200px;
+flex: 1;
 }
 
 @media (min-width: 1200px) {
@@ -303,6 +365,24 @@ ol li {
     max-width: 20px;
 }
 
+.carousel-control.left {
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    filter: none;
+    background-repeat: none;
+}
+
+.carousel-control.right {
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    filter: none;
+    background-repeat: none;
+}
+
 carousel-caption { right: 30%; left: 30% } 
 @media (min-width: 768px){ 
     .carousel-caption { right: 15%; left: 15% } 
@@ -310,8 +390,13 @@ carousel-caption { right: 30%; left: 30% }
 
 @media (max-width: 767px) { /* for mobiles, 768 and up for small devices like tablets */
     /* CSS goes here */
+    
     li {
+        text-align : center;
+        }
 
+    .col-md-2 {
+        text-align : center;
     }
 }
 
@@ -356,7 +441,7 @@ carousel-caption { right: 30%; left: 30% }
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" style="text-align:center;">
   <div class="row">
     <div class="col-md-2 col-md-offset-2">
         <div class="dropDown">
@@ -390,10 +475,10 @@ carousel-caption { right: 30%; left: 30% }
 
 <!-- end of 'top container' -->
 
-<div class="container-fluid">
+<div class="container-fluid"  style="text-align:center;">
     <div style="background-color:#f9f9f9; height:22px;"> <!-- background of the row, sets it all to a pale grey instead of just behind the 'buttons' -->
         <div class="col-md-1 col-md-offset-1">
-            <p class="dropBtn2" href="#">V I E W - A L L</p>
+            <p class="dropBtn2" href="../pages/recipes.php">V I E W - A L L</p>
         </div>
         <div class="col-md-1" style="background-color:#f9f9f9; height:22px;">
             <p class="dropBtn2" href="#">B R E A K F A S T</p>
@@ -429,57 +514,89 @@ carousel-caption { right: 30%; left: 30% }
 
 <!-- Start of 'V I E W - A L L' page -->
 
-<div class="flexContainer">
-    <div class='menu'>
-        <div class='date'>Aug 14, 2016</div>
-        <div class="links">
-            <div class='signup'>Sign Up</div>
-            <div class='login'>Login</div>
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h1 style="background-color:lavender;">R E C I P E - I N D E X</h1> <!-- #e5e5e5 -->
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="blankRow2">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+
+<!-- Breakfast -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#d8fcff;">- B R E A K F A S T -</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Flex box for images -->
+
+<!-- Main -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#fff0d8;">- M A I N -</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Side -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#d8e1ff;">- S I D E -</h2>
         </div>
     </div>
 </div>
 
 
-<div class='header-container'>
-  <div class='header'>
-    <div class='subscribe'>Subscribe &#9662;</div>
-    <div class='logo'><img src='../images/awesome-logo.svg'/></div>
-    <div class='social'><img src='../images/social-icons.svg'/></div>
-  </div>
+<!-- Salad -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#d8ffdc;">- S A L A D -</h2>
+        </div>
+    </div>
 </div>
 
 
-<div class='photo-grid-container'>
-  <div class='photo-grid'>
-    <div class='photo-grid-item first-item'>
-      <img src='../images/one.svg'/>
+<!-- Snack -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#e6d8ff;">- S N A C K -</h2>
+        </div>
     </div>
-    <div class='photo-grid-item'>
-      <img src='../images/two.svg'/>
-    </div>
-    <div class='photo-grid-item'>
-      <img src='../images/three.svg'/>
-    </div>
-    <div class='photo-grid-item'>
-        <img src='../images/four.svg'/>
-    </div>
-    <div class='photo-grid-item last-item'>
-        <img src='../images/five.svg'/>
-    </div>
-  </div>
 </div>
 
 
-<div class='footer'>
-  <div class='footer-item footer-one'></div>
-  <div class='footer-item footer-two'></div>
-  <div class='footer-item footer-three'></div>
+<!-- Dessert -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#ffd8d8;">- D E S S E R T -</h2>
+        </div>
+    </div>
 </div>
 
 
-
-
-
+<!-- Drink -->
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12" style="text-align:center;">
+            <h2 style="background-color:#fcffd8;">- D R I N K -</h2>
+        </div>
+    </div>
+</div>
 
 
 
