@@ -1,34 +1,33 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<?php 
+ini_set('display_errors', 1);
+require('../process/database.php');
+include('../includes/functions2.inc.php');
+include('../includes/functions.inc.php');
 
-<head>
+if(isset($_GET['recName'])){
+	$sRecName = safeString($_GET['recName']); // little s before FilmID as this is a safe variable
+    // optional array of field names
+    $db = new Database('localhost','b6042054','g1nger','b6042054_db2');
+	$db->select("recipes");
+	$db->whereLike("recName",$sRecName); // can add an 's' to the end of the brackets to say that you're adding a string
+	$recipes = $db->fetchData();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- bootstrap - mobile friendly part -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<title>TABEMASHOU</title> <!-- Shows up in the tab at the top -->
     <link type="text/css" rel="stylesheet" href="../css/desktop.css">
-    
-    
+    <title>TABEMASHOU</title> <!-- Shows up in the tab at the top -->
 
 <!-- Have the name of the page currently on in the header -->
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Oswald'); /* imports the google font oswald which is used throughout the website */
-
-@media (max-width: 767px) {
-    /* for mobiles, 768 and up for small devices like tablets */
-    /* CSS goes here */
-    a li {
-        display: block;
-    }
-    .col-md-2 {
-        text-align: center;
-        display: block;
-    }
-}
 img {
     height: 433px;
     width: 333px;
@@ -101,14 +100,46 @@ img {
     }
 }
 
+
+/*@media (max-width: 1280px) {
+    img {
+        height: 333px;
+        width: 233px;
+        object-fit: cover;
+        margin: 15px;
+    }
+}*/
+
+/*@media (max-width: 991px) {
+    /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    /*a li {
+        display: none;
+    }
+    .col-md-1 {
+        background-color: none;
+    }
+    .col-md-2 {
+        text-align: center;
+        display: none;
+    }
+    img {
+        margin-right: 15px;
+        margin-left: 6.5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        height:333px;
+        width: 233px;
+    }
+}*/
 </style>
+
 
 </head>
 
 <body>
 
-<body>
-    <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="blankRow3">
             <div class="col-md-2 col-md-offset-10">
@@ -118,14 +149,10 @@ img {
     </div>
     </div>
 
-
-
-<!-- START OF TOP CONTAINER -->
-
     <div class="container-fluid">
         <div class="siteContainerTop">
         <!-- This will include the Logo - and maybe the search bar and basket -->
-        <a class="topLogo" href="../pages/index.php">
+        <a class="topLogo" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/index.php">
         <div class="col-md-4 col-md-offset-4">
         食べましょう
         </div>
@@ -135,7 +162,7 @@ img {
     <div class="container-fluid">
         <div class="siteContainerTop">
         <!-- This will include the Logo - and maybe the search bar and basket -->
-        <a class="topLogoUnder" href="../pages/index.php">
+        <a class="topLogoUnder" href="http://homepages.shu.ac.uk/~b6042054/Abi/RecipesSite/webAppsSite/pages/index.php">
         <div class="col-md-4 col-md-offset-4">
         - T A B E M A S H O U -
         </div>
@@ -163,41 +190,29 @@ img {
 
 <div class="container-fluid" style="text-align:center;z-index: 99;" id="navbar">
   <div class="row" style="background-color:white;">
-    <div class="col-md-2" style="text-align:center;">
-        <div class="dropDown">
-            <div class="dropBtn">
-        <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-</div>    
-    </div>
+  <div class="col-md-2" style="text-align:center;">
+      <div class="dropDown">
+        <div class="dropBtn">
+            <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+        </div>    
+      </div>
     </div>
     <div class="col-md-2" style="text-align:center;">
         <div class="dropDown">
             <a href="../pages/index.php"><li class="dropBtn">H O M E</li></a> <!-- Add <li></li> tags to these for the css -->
         </div>
     </div>
-    <div class="col-md-2" style="text-align:center;">
-    <div class="dropDown">
-        <a href="../pages/recipes.php"><li class="dropBtn">R E C I P E S</li></a>
-        <div class="dropContent">
-            <a href="../pages/recipes.php">V I E W - A L L</a>
-            <a href="../subPages/breakfast.php">B R E A K F A S T</a>
-            <a href="../subPages/main.php">M A I N</a>
-            <a href="../subPages/side.php">S I D E</a>
-            <a href="../subPages/salad.php">S A L A D</a>
-            <a href="../subPages/snack.php">S N A C K</a>
-            <a href="../subPages/dessert.php">D E S S E R T</a>
-            <a href="../subPages/drink.php">D R I N K</a>
-            <a href="../subPages/byCountry.php">V E G E T A R I A N</a>
-            <a href="../subPages/specialDiets.php">V E G A N</a>
+    <div class="col-md-2">
+        <div class="dropDown">
+            <a href="../pages/recipes.php"><li class="dropBtn">R E C I P E S</li></a>
         </div>
     </div>
-    </div>
-    <div class="col-md-2" style="text-align:center;">
+    <div class="col-md-2">
         <div class="dropDown">
             <a href="../pages/about.php"><li class="dropBtn">A B O U T</li></a>
         </div>
     </div>
-    <div class="col-md-2" style="text-align:center;">
+    <div class="col-md-2">
         <div class="dropDown">
             <a href="../pages/contact.php"><li class="dropBtn">C O N T A C T</li></a>
         </div>
@@ -211,6 +226,7 @@ img {
         </div>
     </div>
 </div>
+
 <div class="container-fluid">
     <div class="paleLine">
         <div colspan="12"> <!-- Blank row with colour to seperate the nav bar from the rest of the site body -->
@@ -220,47 +236,50 @@ img {
 
 <!-- end of 'top container' -->
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div colspan="12" style="text-align:center;">
-            <h1 style="background-color:#d8ffdc;">- A B O U T -</h1>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
-        </div>
-    </div>
-</div>
-
-
-<div class="container-fluid">
+    <div class="col-md-12" style="text-align:center;">
+    	<h2>Search by name</h2>
+        		<form method="get" style="text-align:center;">
+        					<div class="form-group">
+                           <label for="recName"></label>
+                           <input type="text" name="recName" id="recName" class="form-control" >
+                           <input type="submit" class="btn btn-default" style="border-style: none;
+                                font-family: 'Oswald';text-transform: uppercase;text-align: center;
+                                vertical-align: text-bottom;">
+                           </div>
+               </form>                     
+     </div>
+     </div>
     <div class="row">
-        <div class="col-md-3 col-md-offset-2">
-            <!-- image -->
-            
-            <img src="../images/LJiLi3pLRyy8+2SIPdAlPQ_thumb_6ff1.jpg">
-            
-            <div>
-            <h6>Looking at my favourite things, pastries.</h6>
-            </div>
-        </div>
-        <div class="col-md-5" style="margin-top:30px; margin-bottom:30px;">
-            <!-- about section -->
-            <h4>For my Web Application Developments site project I decided 
-                to make a website where you could not only look through recipes 
-                but also help you plan your weekly meals by having different 
-                sections.
-            </h4>
+    <div class="col-md-12" style="margin-top:30px;">
+                           
+        <?php if(isset($recipes)){
+			for($a=0;$a<count($recipes);$a++){ ?>
 
-        </div>
+          <ul style="text-align:center;padding-left:0px;">
+              <li style="display:inline;">
+                  <!--<span><?php //echo $a+1; ?></span>-->
+                  <span><h1><a href="../pages/details?recID=<?php echo $row->recID ?>" style="background-color:white;text-decoration:none;padding-bottom:0px;"> <?php echo $recipes[$a]['recName']; ?> </a></h1></span>
+                
+                  <h4 style="color:lightgrey;margin-top:0px;"><span style="margin:15px;"><?php echo $recipes[$a]['recDiet']; ?></span></h4>
+                  <h4><span><?php echo $recipes[$a]['recType']; ?></span></h4>
+                  <div class="container-fluid">
+                    <div class="blankRow2">
+                        <div colspan="12"> <!-- Blank row -->
+                        </div>
+                    </div>
+                  </div>
+              </li>
+          </ul>    
+
+<?php 
+	  			} // end for
+ 		} // 	
+?>
+    </div>
     </div>
 </div>
-
-
-
 
 <script src="../js/stickyNavBar.js"></script>
 </body>

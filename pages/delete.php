@@ -1,6 +1,14 @@
 <?php
-//require('../includes/sessions.inc.php');
+ini_set('display_errors', 1);
 require('../includes/conn.inc.php');
+require('../includes/functions.inc.php');
+
+$sRecID = safeInt($_GET['recID']);
+$sql= "SELECT * FROM recipes WHERE recID LIKE :recID";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':recID', $sRecID, PDO::PARAM_INT); 
+$stmt->execute();
+$row = $stmt->fetchObject();
 
 ?>
 
@@ -105,8 +113,8 @@ require('../includes/conn.inc.php');
         <div class="dropDown">
             <div class="dropBtn">
         <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-</div>    
-    </div>
+    </div>    
+  </div>
     </div>
     <div class="col-md-2" style="text-align:center;">
         <div class="dropDown">
@@ -125,8 +133,8 @@ require('../includes/conn.inc.php');
             <a href="../subPages/snack.php">S N A C K</a>
             <a href="../subPages/dessert.php">D E S S E R T</a>
             <a href="../subPages/drink.php">D R I N K</a>
-            <a href="../subPages/byCountry.php">V E G E T A R I A N</a>
-            <a href="../subPages/specialDiets.php">V E G A N</a>
+            <a href="../subPages/byCountry.php">B Y - C O U N T R Y</a>
+            <a href="../subPages/specialDiets.php">S P E C I A L - D I E T</a>
         </div>
     </div>
     </div>
@@ -171,70 +179,33 @@ require('../includes/conn.inc.php');
     </div>
 </div>
 
-
-
 <div class="container-fluid">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-    
-
-    <!-- Wrapper for slides -->
-   <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img class="img-responsive" src="../images/jgm-recipes-fried-eggs-1600x10001.jpg" alt="breakfast" style="width:100%;">
-      </div>
-      
-      <div class="item">
-        <img class="img-responsive" src="../images/jgm-le-dock-1600x1000-23.jpg" alt="salad" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img class="img-responsive" src="../images/jgm-topping-rose-house-1600x1000-52.jpg" alt="side" style="width:100%;">
-      </div>
+    <div class="row">
+        <div colspan="12">
+            <h1>ARE YOU SURE YOU WANT TO DELETE THIS RECIPE?</h1>
+        </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#carouselExampleIndicators" data-slide="prev" role="button">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carouselExampleIndicators" data-slide="next" role="button">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 </div>
-
 <div class="container-fluid">
-    <div class="blankRowB">
+    <div class="blankRow2">
         <div colspan="12"> <!-- Blank row -->
         </div>
     </div>
 </div>
-
-
-<div class="container-fluid" style="text-align:center;">
-    <div class="row" colspan="12">
-        <h3>- Welcome To Tabemashou -</h3>
-    </div>
-</div>
-
-<div class="container-fluid" style="text-align:center;">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h4>Here you have access to recipes seperated by meal type and dietary requirements. You can pick and choose up to 7 recipes per meal type to personalise your own weekly meal plan.</h4>
-            <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
-            imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, 
-            porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.</h4>
-            <h4>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. 
-            Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. 
-            Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</h4>
+        <div class="col-md-2 col-md-offset-4">
+            <h1><a style="color:#f44336;" href="../pages/recipes.php">NO</a></h1>
+        </div>
+        <div class="col-md-2">
+            <!--<h1><a style="color:#36f44f;" action="../process/deleteRec.php?recID=<?php //echo $row->recID ?>">YES</a></h1>-->
+            <form name="form1" method="post" action="../process/deleteRec.php" class="form-inline">
+                <!-- Add the filmID as a hidden field -->
+                <input type = "hidden" name = "filmID" value = "<?php echo $row->filmID; ?>">
+            	<input style="color:#36f44f;ont-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+                    font-size: 18px;font-weight: 800;" type="submit" value="YES" class="h1">
+                <a href="../pages/recipes.php"></a>
+            </form>
         </div>
     </div>
 </div>
@@ -242,5 +213,4 @@ require('../includes/conn.inc.php');
 
 <script src="../js/stickyNavBar.js"></script>
 </body>
-
 </html>

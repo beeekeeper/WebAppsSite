@@ -39,6 +39,79 @@ require('../includes/conn.inc.php');
         display: none;
     }
 }
+img {
+    height: 433px;
+    width: 333px;
+    object-fit: cover;
+    margin: 30px;
+}
+
+@media (max-width: 375px) {
+    /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    img {
+        margin-right: 15px;
+        margin-left: 6.5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        height:233px;
+        width: 133px;
+    }
+}
+
+@media (max-width: 425px) {
+    /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    img {
+        margin-right: 15px;
+        margin-left: 6.5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        height:233px;
+        width: 133px;
+    }
+}
+
+/*@media (max-width: 646px) {
+    /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    /*img {
+        margin-right: 15px;
+        margin-left: 6.5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        height:233px;
+        width: 133px;
+    }
+}*/
+
+@media (min-width: 426px) {
+    /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    img {
+        margin-right: 15px;
+        margin-left: 6.5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        height:333px;
+        width: 233px;
+    }
+}
+
+@media (min-width: 1314px) {
+    /* for mobiles, 768 and up for small devices like tablets */
+    /* CSS goes here */
+    img {
+        margin-right: 15px;
+        margin-left: 6.5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        height:433px;
+        width: 333px;
+    }
+}
+
+
 
 </style>
 
@@ -101,12 +174,12 @@ require('../includes/conn.inc.php');
 
 <div class="container-fluid" style="text-align:center;z-index: 99;" id="navbar">
   <div class="row" style="background-color:white;">
-    <div class="col-md-2" style="text-align:center;">
-        <div class="dropDown">
-            <div class="dropBtn">
-        <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-</div>    
-    </div>
+  <div class="col-md-2" style="text-align:center;">
+      <div class="dropDown">
+        <div class="dropBtn">
+            <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+        </div>    
+      </div>
     </div>
     <div class="col-md-2" style="text-align:center;">
         <div class="dropDown">
@@ -116,18 +189,6 @@ require('../includes/conn.inc.php');
     <div class="col-md-2" style="text-align:center;">
     <div class="dropDown">
         <a href="../pages/recipes.php"><li class="dropBtn">R E C I P E S</li></a>
-        <div class="dropContent">
-            <a href="../pages/recipes.php">V I E W - A L L</a>
-            <a href="../subPages/breakfast.php">B R E A K F A S T</a>
-            <a href="../subPages/main.php">M A I N</a>
-            <a href="../subPages/side.php">S I D E</a>
-            <a href="../subPages/salad.php">S A L A D</a>
-            <a href="../subPages/snack.php">S N A C K</a>
-            <a href="../subPages/dessert.php">D E S S E R T</a>
-            <a href="../subPages/drink.php">D R I N K</a>
-            <a href="../subPages/byCountry.php">V E G E T A R I A N</a>
-            <a href="../subPages/specialDiets.php">V E G A N</a>
-        </div>
     </div>
     </div>
     <div class="col-md-2" style="text-align:center;">
@@ -158,89 +219,123 @@ require('../includes/conn.inc.php');
 
 <!-- end of 'top container' -->
 
+
 <div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
+    <div> <!-- background of the row, sets it all to a pale grey instead of just behind the 'buttons' -->
+        <div class="col-md-1 col-md-offset-1">
+            <a  href="../pages/recipes.php"><p class="dropBtn2">V I E W - A L L</p></a>
         </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
+        <div class="col-md-1">
+        <a  href="../subPages/breakfast.php"><p class="dropBtn2">B R E A K F A S T</p></a>
         </div>
-    </div>
-</div>
-
-
-
-<div class="container-fluid">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
-    
-
-    <!-- Wrapper for slides -->
-   <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img class="img-responsive" src="../images/jgm-recipes-fried-eggs-1600x10001.jpg" alt="breakfast" style="width:100%;">
-      </div>
-      
-      <div class="item">
-        <img class="img-responsive" src="../images/jgm-le-dock-1600x1000-23.jpg" alt="salad" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img class="img-responsive" src="../images/jgm-topping-rose-house-1600x1000-52.jpg" alt="side" style="width:100%;">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#carouselExampleIndicators" data-slide="prev" role="button">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carouselExampleIndicators" data-slide="next" role="button">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-<div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
+        <div class="col-md-1">
+        <a  href="../subPages/main.php"><p class="dropBtn2" href="#">M A I N</p></a>
+        </div>
+        <div class="col-md-1">
+        <a  href="../subPages/side.php"><p class="dropBtn2" href="#">S I D E</p></a>
+        </div>
+        <div class="col-md-1">
+        <a  href="../subPages/salad.php"><p class="dropBtn2" href="#">S A L A D</p></a>
+        </div>
+        <div class="col-md-1">
+        <a  href="../subPages/snack.php"><p class="dropBtn2" href="#">S N A C K</p></a>
+        </div>
+        <div class="col-md-1">
+        <a  href="../subPages/dessert.php"><p class="dropBtn2" href="#">D E S S E R T</p></a>
+        </div>
+        <div class="col-md-1">
+        <a  href="../subPages/drink.php"><p class="dropBtn2" href="#">D R I N K</p></a>
+        </div>
+        <div class="col-md-1">
+            <a  href="../pages/vegetarian.php"><p class="dropBtn2">V E G E T A R I A N</p></a>
+        </div>
+        <div class="col-md-1">
+        <a  href="../pages/vegan.php"><p class="dropBtn2" href="#">V E G A N</p></a>
         </div>
     </div>
 </div>
 
 
-<div class="container-fluid" style="text-align:center;">
-    <div class="row" colspan="12">
-        <h3>- Welcome To Tabemashou -</h3>
-    </div>
-</div>
+<!-- End of top container plus mini nav bar -->
 
-<div class="container-fluid" style="text-align:center;">
+
+
+
+<!-- Start of veggie page -->
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h4>Here you have access to recipes seperated by meal type and dietary requirements. You can pick and choose up to 7 recipes per meal type to personalise your own weekly meal plan.</h4>
-            <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
-            imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, 
-            porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.</h4>
-            <h4>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. 
-            Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. 
-            Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</h4>
+        <div colspan="12" style="text-align:center;">
+            <h1 style="background-color:lavender;">V E G A N</h1> <!-- #e5e5e5 -->
         </div>
     </div>
 </div>
+
+<div class="container-fluid">
+    <div class="blankRowB">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+
+
+<!-- Flex box for images -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="cell col-md-10 col-md-offset-1">
+            <?php 
+            $queryRecipes = "SELECT * FROM recipes WHERE recDiet LIKE '%VG%'";
+
+            $stmt = $pdo->query($queryRecipes); 
+            while ($row =$stmt->fetchObject()) { 
+                echo 
+                "<a href=\"../pages/details.php?recID=$row->recID\">";
+
+                echo 
+                "<img src=\"../images/$row->recImage\"/>";
+
+                echo 
+                "</a>";
+                //echo "<h5>{$row->recName}</h5>";
+            } ?>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="blankRowB">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div colspan="12">
+            <h1><a href="../pages/insert.php">WRITE A NEW RECIPE</a></h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="blankRowB">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="blankRowB">
+        <div colspan="12"> <!-- Blank row -->
+        </div>
+    </div>
+</div>
+
 
 
 <script src="../js/stickyNavBar.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,24 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<?php
+ini_set('display_errors', 1);
+require('../includes/conn.inc.php');
+require('../includes/functions.inc.php');
 
+//$sRecID = safeInt($_GET['recID']);
+//$sql= "SELECT * FROM recipes WHERE recID = :recID";
+//$sRecID = safeInt($_GET['recID']);
+//$stmt = $pdo->prepare($sql);
+//$stmt->bindParam(':recID', $sRecID, PDO::PARAM_INT);
+//$stmt->execute();
+//$row = $stmt->fetchObject();
+
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- bootstrap - mobile friendly part -->
@@ -17,24 +35,13 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Oswald'); /* imports the google font oswald which is used throughout the website */
-
-@media (max-width: 767px) {
-    /* for mobiles, 768 and up for small devices like tablets */
-    /* CSS goes here */
-    .col-md-2 {
-        text-align: center;
-        display: block;
-    }
-}
 </style>
-
 
 </head>
 
 <body>
 
-<body>
-    <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="blankRow3">
             <div class="col-md-2 col-md-offset-10">
@@ -42,8 +49,7 @@
             </div>
         </div>
     </div>
-    </div>
-
+</div>
 
 
 <!-- START OF TOP CONTAINER -->
@@ -89,12 +95,12 @@
 
 <div class="container-fluid" style="text-align:center;z-index: 99;" id="navbar">
   <div class="row" style="background-color:white;">
-    <div class="col-md-2" style="text-align:center;">
-        <div class="dropDown">
-            <div class="dropBtn">
-        <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-</div>    
-    </div>
+  <div class="col-md-2" style="text-align:center;">
+      <div class="dropDown">
+        <div class="dropBtn">
+            <a href="../pages/search.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+        </div>    
+      </div>
     </div>
     <div class="col-md-2" style="text-align:center;">
         <div class="dropDown">
@@ -103,7 +109,7 @@
     </div>
     <div class="col-md-2" style="text-align:center;">
     <div class="dropDown">
-        <a href="../pages/recipes.php"><li class="dropBtn">R E C I P E S</li></a>
+        <a  href="../pages/recipes.php"><li class="dropBtn">R E C I P E S</li></a>
         <div class="dropContent">
             <a href="../pages/recipes.php">V I E W - A L L</a>
             <a href="../subPages/breakfast.php">B R E A K F A S T</a>
@@ -113,8 +119,8 @@
             <a href="../subPages/snack.php">S N A C K</a>
             <a href="../subPages/dessert.php">D E S S E R T</a>
             <a href="../subPages/drink.php">D R I N K</a>
-            <a href="../subPages/byCountry.php">V E G E T A R I A N</a>
-            <a href="../subPages/specialDiets.php">V E G A N</a>
+            <a href="../subPages/byCountry.php">B Y - C O U N T R Y</a>
+            <a href="../subPages/specialDiets.php">S P E C I A L - D I E T</a>
         </div>
     </div>
     </div>
@@ -146,128 +152,87 @@
 
 <!-- end of 'top container' -->
 
-<div class="container-fluid">
-    <div class="row">
-        <div colspan="12" style="text-align:center;">
-            <h1 style="background-color:#d8fcff;">- C O N T A C T -</h1>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
-        </div>
-    </div>
-</div>
-
-<!-- Start of the selected web page -->
-
-<div class="container-fluid" style="text-align:center;">
-  <div class="row">
-    <div class="col-md-2 col-md-offset-4">
-            <h4>E M A I L : tabemashouu@gmail.com</h4> <!-- Add <li></li> tags to these for the css -->
-    </div>
-    <div class="col-md-2">
-            <h4>A D D R E S S : Cantor, 153 Arundel St, Sheffield</h4>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid" style="text-align:center;">
-  <div class="row">
-    <div class="col-md-2 col-md-offset-4">
-            <h4>T E L : XXXX-XXXX-XXXX</h4>
-    </div>
-    <div class="col-md-2">
-            <h4>P O S T C O D E : S1 2NT</h4>
-    </div>
-  </div>
-</div>
 
 
-<div class="container-fluid">
-    <div class="blankRowB">
-        <div colspan="12"> <!-- Blank row -->
-        </div>
-    </div>
-</div>
 
-<!-- Google Maps -->
-<style>
-        #map {
-            height: 420px;
-            width: 100%;
-            max-width: 1880px;
-            position: relative;
-            text-align: center;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
 
-        @media (max-width: 767px) { /* for mobiles, 768 and up for small devices like tablets */
-        /* CSS goes here */
-        #map {
-            height: 160px;
-            width: 345px;
-            position: relative;
-            text-align: center;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-
-        li {
-            text-align : center;
-        }
-
-        .col-md-2 {
-            text-align : center;
-        }
-}
-</style>
+<!-- START OF EDIT -->
 
 <div class="container-fluid">
     <div class="row">
         <div colspan="12">
-            <div id="map"></div>
-            <script>
-                function initMap() {
-                    var uluru = {
-                        lat: 53.376966,
-                        lng: -1.467767
-                    };
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 15,
-                    center: uluru
-                    });
-                    var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map
-                    });
-                    }
-            </script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2YPFQl-XBqzXy6KJBPPz1DN4_gka9ii0&callback=initMap">
-            </script>
+            <h3>WRITE A NEW RECIPE</h3>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="blankRow3">
-            <!--<div colspan="12">--> <!-- Blank row -->
-            <div class="col-md-2 col-md-offset-10">
+<div class="row">        
+    <form name="form1" method="post" action="../process/insertRec.php"> <!--  -->
+        <div class="col-md-5 col-md-offset-1">
+
+            <div>
+
+                <h1><label for="recName">RECIPE NAME</label></h1>
+                <input type="text" name="recName" id="recName"  class="form-control">
+                        
             </div>
+
+            <div>  
+                    
+                <h1><label for="recDiet">SUITABLE FOR</label></h1>
+                <input type="text" name="recDiet" id="recDiet" class="form-control">
+                            
+            </div> 
+            
+            <div>          
+                 
+                <h1><label for="recDescription">DESCRIPTION</label></h1>
+                <input type="text" name="recDescription" id="recDescription" class="form-control">
+                  
+            </div>
+
+            <div>       
+                <h1><label for="recImage">IMAGE NAME</label></h1>
+                <input type="text" name="recImage" id="recImage"  class="form-control">            
+            </div>
+
+            <div>                        
+                <h1><label for="recImageDesc">ORIGINAL IMAGE SOURCE</label></h1>
+                <input type="text" name="recImageDesc" id="recImageDesc"  class="form-control">                
+            </div>
+            
         </div>
-    </div>
+
+
+        <div class="col-md-5">
+
+            <div>     
+                <label for="recType"><h1>MEAL TYPE</h1></label>
+                <input type="text" name="recType" id="recType" class="form-control">          
+            </div>
+            
+            <div>               
+                <h1><label for="recIngredients">INGREDIENTS</label></h1>
+                <input style="height:200px;" type="text" name="recIngredients" id="recIngredients" class="form-control">  
+            </div>
+
+            <div>         
+                <h1><label for="recMethod">METHOD</label></h1>
+                <input style="height:200px;" type="text" name="recMethod" id="recMethod" class="form-control">     
+            </div>
+
+        </div>
+
+        <div class="col-md-12" style="margin:30px; text-align:center;">             
+                <input style="text-align:center;font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+                    font-size:18px;font-weight:800;color:#222;text-transform:uppercase;border-style:none;" type="submit" name="button" id="button" value="PUBLISH" class="btn btn-default">
+         </div>
+
+    </form>
 </div>
+
 
 
 <script src="../js/stickyNavBar.js"></script>
 </body>
-
 </html>

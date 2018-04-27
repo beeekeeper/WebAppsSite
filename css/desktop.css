@@ -48,6 +48,31 @@ h4 {
     text-transform: uppercase;
 }
 
+h5 {
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    text-transform: uppercase;
+    margin: 15px;
+    width: 333px;
+}
+
+h6 {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 10px;
+    font-weight: 100;
+    /*margin: 1em 0 0;*/
+    /*letter-spacing: 4px;*/
+    color: rgb(201, 201, 201);
+    text-transform: uppercase;
+}
+
 ul {
     list-style-type: none;
     /*display: flex;
@@ -96,7 +121,7 @@ li a:hover {
 }
 
 .dropBtn2 {
-    background-color: #F9F9F9;
+    /*background-color: #F9F9F9;*/
     color: black;
     font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
     font-size: 9px;
@@ -172,6 +197,8 @@ a {
     -moz-transition: .5s;
     -webkit-transition: .5s;
     transition: .5s;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 a:hover {
@@ -181,6 +208,7 @@ a:hover {
     -moz-transition: .5s;
     -webkit-transition: .5s;
     transition: .5s;
+    text-decoration: none;
 }
 
 li:hover {
@@ -193,7 +221,9 @@ li:hover {
 }
 
 p:hover {
-    color: lavender;
+    color: white;
+    /* text changes to white and background changes to whatever colour that section is? */
+    background-color: #ffd8dd;
     -o-transition: .5s;
     -ms-transition: .5s;
     -moz-transition: .5s;
@@ -272,7 +302,7 @@ p:hover {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000\9;
+    background-color: #000;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     border-radius: 10px;
@@ -290,6 +320,10 @@ p:hover {
 
 .sticky+.content {
     padding-top: 60px;
+}
+
+.container-fluid {
+    text-align: center;
 }
 
 .flexContainer {
@@ -389,9 +423,150 @@ ol li {
     background-repeat: none;
 }
 
-carousel-caption {
+.carousel-caption {
     right: 30%;
     left: 30%
+}
+
+* {
+    box-sizing: border-box
+}
+
+
+/* SIGN UP MODAL BOX */
+
+input[type=text],
+input[type=password] {
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    background-color: #ddd;
+    outline: none;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.cancelbtn {
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    padding: 14px 20px;
+    background-color: #fff;
+    color: #f44336;
+}
+
+.signupbtn {
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    padding: 14px 20px;
+    background-color: #fff;
+    color: #36f44f;
+}
+
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    padding: 14px 20px;
+    background-color: #fff;
+}
+
+.container {
+    padding: 16px;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #474e5da1;
+    padding-top: 50px;
+}
+
+.modal-content {
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%;
+    /* Could be more or less, depending on screen size */
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+    font-family: 'Oswald', 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 767px) {
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+p .dropBtn2 {
+    background-color: #f9f9f9;
+    height: 22px;
+}
+
+cell {
+    margin: 1rem;
+}
+
+img {
+    vertical-align: super;
+}
+
+item {
+    max-height: 520px;
+    max-width: 1880px;
+}
+
+.smallerScreen {
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -407,8 +582,15 @@ carousel-caption {
     li {
         text-align: center;
     }
+    a li {
+        display: none;
+    }
+    .col-md-1 {
+        background-color: none;
+    }
     .col-md-2 {
         text-align: center;
+        display: none;
     }
     .carousel-inner>.item>img {
         width: 640px;
@@ -421,5 +603,43 @@ carousel-caption {
         margin: 0 auto;
         height: 250px;
         /* height of the slide indicators */
+    }
+    p {
+        display: none;
+    }
+    p .dropBtn2 {
+        display: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .smallerScreen {
+        display: block;
+        text-align: center;
+    }
+    item {
+        max-height: 250px;
+        max-width: 640px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .disappear {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    p {
+        display: none;
+    }
+    p .dropBtn2 {
+        display: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .disappear {
+        display: none;
+    }
+    .smallerScreen {
+        display: block;
+        text-align: center;
     }
 }
